@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<title>Hangman Game</title>
+</head>
+<body>
+	<div class="container">
+
+	<!-- Begin Jumbtron Code -->
+	
+	<div class="jumbotron">
+	<img src="assets/images/Hangman.jpg" alt="Hangman" class="img-rounded">
+	</div> <!-- - Jumbotron -->
+
+<!-- Begin Gameplay Code -->
+
+	<div class="col-md-12 gameplay">
+		<div class="row">
+			<h3>Let's play!  Guess any letter to begin</h3>
+				<br>
+
+<!-- Current Word Displayed -->
+
+			<h4>Current Word</h4>
+				<br>
+				<h1><div id="dashed_word"></div></h1>
+				<br>
+				<br>
+			
+		</div> <!-- row -->
+
+<!-- Guesses Remaining -->
+
+		<div class="row">
+			<h4>Number of guesses Remaining</h4>
+			<h4><div id="guesses_left"></div></h4>
+		</div> <!-- Row -->
+
+
+<!-- Letters Guessed -->
+
+		<div class="row">
+			<br>
+			<h4>Letters Guessed</h4>
+			<br>
+			<h4><div id="guesses_made"</div></h4>
+			<br>
+		</div> <!-- Row -->
+
+	</div> <!-- gameplay -->
+
+<!-- Scores Returned Below -->
+
+	<div class="row scores">
+		<div class="col-md-6 yourscore">
+			<img src="assets/images/highscore.svg" height=15% width=15% alt="HighScore" class="img-rounded">
+			<h3>Your Score</h3>
+
+			Player Score Goes Here
+		</div> <!-- yourscore -->
+
+	<div class="col-md-6 highscore">
+		<img src="assets/images/highscore.svg" height=15% width=15% alt="HighScore" class="img-rounded">
+		<h3>High Scores</h3>
+
+		High Scores Go Here
+	</div> <!-- highscore -->
+
+	</div> <!-- - Container -->
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
