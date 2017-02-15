@@ -1,57 +1,122 @@
-//Set the number of guesses reaming to 10
+$(document).ready(function() {
 
-var guessesRemaining=10;
+		var targetscore = 0;
+		var playerscore = 0;
+		var bluevalue = 0;
+		var greenvalue = 0;
+		var yellowvalue = 0;
+		var redvalue = 0;
+		var wins = 0;
+		var losses = 0;
 
-//Display the number of guesses remaining
+  
 
-document.getElementById('guesses_left').innerHTML = guessesRemaining;
-
-
-// Define the wordbank to be used in the hangman game
-
-var wordbank=["elementary","playground","crayons","glitter", "backpack", "recess", "teacher", "desk", "encyclopedia", "library", "homeroom", "lunchbox","classmates","crosswalk"];
-
-// Randomly choose a word from the wordbank to be guessed
-
-var randomWord = wordbank[Math.floor(Math.random() * wordbank.length)];
-var dashArray = [];
-
-console.log(randomWord);
-
-//Reduce number of guesses for each letter typed
-
-function reduceGuesses() {
-   guessesRemaining--;    
-}
-
-//Take random word and create dashed word
-
-for (i = 0; i < randomWord.length; i++) {
-	dashArray[i] = "_";
-}
-document.getElementById('dashed_word').innerHTML = dashArray.join(" ");
+		// Generate the target number and assign values to each crystal
 
 
-//Show found letters in dashed word
+        var targetscore = Math.floor(Math.random() * ((19-120)+1) + 120);
+        console.log(targetscore);
 
-document.onkeyup = function(event) {
-	var guess = event.key;
-	for(var i = 0; i < randomWord.length; i++) {
-		if(randomWord[i] === guess) {
-			dashArray[i] = guess;
+        var bluevalue = Math.floor(Math.random() * ((1-12)+1) + 12);
+
+        var greenvalue = Math.floor(Math.random() * ((1-12)+1) + 12);
+
+        var yellowvalue = Math.floor(Math.random() * ((1-12)+1) + 12);
+
+        var redvalue = Math.floor(Math.random() * ((1-12)+1) + 12);
+     
+
+		// Display the target number
+
+		function displaytarget() {
+			$("#target").text(targetscore);
 		}
-	} //end for loop
-	document.getElementById('dashed_word').innerHTML = dashArray.join(" ");
-}
+
+		displaytarget();
+
+    // Display Wins
+
+    function displaywin() {
+      $("#win").text(wins);
+    }
+
+    displaywin();
+
+    // Display Loss
+
+    function displayloss() {
+      $("#loss").text(losses);
+    }
+
+    displayloss();
 
 
-// Record previous guesses - Not Working
+    // Update the player's total
 
-// var lettersGuessed = [];
+    function update() {
+      $("#total").text(playerscore);
+    }
 
-// document.onkeyup=function(){
-//     document.getElementById('guesses_made').innerHTML = push.guess(lettersGuessed);
-//     }
+  //   // Win/Lose Alert
+
+  //     function checkScore() {
+
+  //     if playerscore > 0 {
+  //       if (playerscore = targetscore) {
+  //         wins++;
+  //      alert("You Win!");
+      
+  //     if (playerscore > targetscore) {
+  //           losses++;
+  //        alert("You Lose!");
+  //      }
+  //     }
+  //   }
+  // }
+
+
+
+		//Add value to player total when clicked
+
+		// Blue Crystal
+      $(".bluecrystal").on("click", function() {
+        playerscore=playerscore+bluevalue;
+        update();
+        // checkScore();
+      });
+
+      // Green Crystal
+      $(".greencrystal").on("click", function() {
+      	playerscore=playerscore+greenvalue;
+        update();
+        // checkScore();
+      });
+
+      // Yellow Crystal
+      $(".yellowcrystal").on("click", function() {
+      	playerscore=playerscore+yellowvalue;
+        update();
+        // checkScore();
+      });
+
+      // Red Crystal
+      $(".redcrystal").on("click", function() {
+      	playerscore=playerscore+redvalue;
+        update();
+        // checkScore();
+      });
+
+   
+      // Check score for match
+
+      checkScore();
+
+
+
+      });  
+
+// Closes Document Ready
+
 
 
 

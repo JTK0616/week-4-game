@@ -1,28 +1,7 @@
-.jumbotron {
-	background-color: #FFFFFF;
+.jumbotron {  
+	background-size: cover; 
+}
+
+img {
 	text-align: center;
-}
-
-.yourscore {
-	text-align: center;
-}
-
-.highscore {
-	text-align: center;
-}
-
-.yourscore h3 {
-	color: red;
-}
-
-.highscore h3 {
-	color: red;
-}
-
-.gameplay {
-	text-align: center;
-}
-
-#guesses_left {
-	color: red;
 }
