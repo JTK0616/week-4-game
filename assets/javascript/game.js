@@ -34,22 +34,6 @@ $(document).ready(function() {
 
 		displaytarget();
 
-    // Display Wins
-
-    function displaywin() {
-      $("#win").text(wins);
-    }
-
-    displaywin();
-
-    // Display Loss
-
-    function displayloss() {
-      $("#loss").text(losses);
-    }
-
-    displayloss();
-
 
     // Update the player's total
 
@@ -57,24 +41,23 @@ $(document).ready(function() {
       $("#total").text(playerscore);
     }
 
-  //   // Win/Lose Alert
+    // // Win/Lose Alerts
 
-  //     function checkScore() {
+    //   function checkWin() {
 
-  //     if playerscore > 0 {
-  //       if (playerscore = targetscore) {
-  //         wins++;
-  //      alert("You Win!");
+    //   if (playerscore>0) {
+    //     if (playerscore == targetscore) {
+    //       wins++;
+    //    alert("You Win!");
+
+    //  }}}});
+
+      //  function checkLoss() {
       
-  //     if (playerscore > targetscore) {
-  //           losses++;
-  //        alert("You Lose!");
-  //      }
-  //     }
-  //   }
-  // }
-
-
+      // if (playerscore>targetscore) {
+      //       losses++;
+      //    alert("You Lose!");
+      //  }
 
 		//Add value to player total when clicked
 
@@ -82,40 +65,54 @@ $(document).ready(function() {
       $(".bluecrystal").on("click", function() {
         playerscore=playerscore+bluevalue;
         update();
-        // checkScore();
+        // checkLoss();
+        // checkWin();
       });
 
       // Green Crystal
       $(".greencrystal").on("click", function() {
       	playerscore=playerscore+greenvalue;
         update();
-        // checkScore();
+        // checkLoss();
+        // checkWin();
       });
 
       // Yellow Crystal
       $(".yellowcrystal").on("click", function() {
       	playerscore=playerscore+yellowvalue;
         update();
-        // checkScore();
+        // checkLoss();
+        // checkWin();
       });
 
       // Red Crystal
       $(".redcrystal").on("click", function() {
       	playerscore=playerscore+redvalue;
         update();
-        // checkScore();
+        // checkLoss();
+        // checkWin();
       });
 
-   
-      // Check score for match
 
-      checkScore();
+      // Display Wins
+
+    function displaywin() {
+      $("#win").text(wins);
+    };
+
+    displaywin();
+
+    // Display Loss
+
+    function displayloss() {
+      $("#loss").text(losses);
+    };
+
+    displayloss();
+
+});
 
 
-
-      });  
-
-// Closes Document Ready
 
 
 
